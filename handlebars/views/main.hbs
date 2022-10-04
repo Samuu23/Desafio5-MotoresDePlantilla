@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+</head>
+<body>
+    <h1>Productos con Handlebars</h1>
+    <ul>
+        {{#if products}}
+        <table>
+            <th>Titulo</th>
+            <th>Precio</th>
+            <th>Foto</th>
+            {{#each products}}
+            <tr>
+                <th>{{this.tittle}}</th>
+                <th>{{this.price}}</th>
+                <th><img width="50" height="50" src="{{this.thumbnail}}" alt=""></th>
+            </tr>
+            {{/each}}
+        </table>
+        {{else}}
+        <h1>No se encuentra ningun producto</h1>
+        {{/if}}
+    </ul>
+    <a href="/">Volver</a>
+</body>
+</html>

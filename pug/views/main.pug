@@ -1,0 +1,26 @@
+html
+    head 
+    body 
+        h1="Productos con Pug"
+            if !products.length
+                h2='no se encuentra ningun producto'
+            else
+                table(style="border-collapse: collapse;")
+                    th(style="border-collapse: collapse;font-size: 35px;padding-right: 20px")="Titulo"
+                    th(style="border-collapse: collapse;font-size: 35px;padding-right: 20px")="Precio"
+                    th(style="border-collapse: collapse;font-size: 35px;padding-right: 20px")="Imagen"
+                    each product in products.length ? products : ['no se encuentran valores']
+                        tr(style="border-collapse: collapse;")
+                            td(style="border-collapse: collapse;")= product.tittle
+                            td(style="border-collapse: collapse;")= product.price
+                            td(style="border-collapse: collapse;"): img(style="width: 50; height: 50" src=product.thumbnail)
+            a(href="http://localhost:8080/index.html") Volver
+                //- table() 
+                //-     th(style="font-size: 35px;padding-right: 20px")='Titulo'
+                //-     th(style="font-size: 35px;padding-right: 20px")='Precio'
+                //-     th(style="font-size: 35px;padding-right: 20px")='Foto'
+                //- each product in products
+                //-     tr(style="border: 1px solid #000000;border-collapse: collapse;")
+                //-         td(style="font-size: 5px;")= product.tittle
+                //-         td(style="font-size: 20px;")= product.price
+                //-         td(): img(style="width: 50; height: 50" src=product.thumbnail)  
